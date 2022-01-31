@@ -3,7 +3,7 @@ public with sharing class FunctionApex {
     @AuraEnabled(cacheable=true)
     public static String gzipInfo(String data) {
 
-        System.debug('Invoking myfunction: ' + data);
+        System.debug('Invoking myfunction');
 
         functions.Function myFunction = functions.Function.get('functionPoC.gzipinfo');
         functions.FunctionInvocation invocation = myFunction.invoke(data);

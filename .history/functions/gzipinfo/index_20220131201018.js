@@ -19,7 +19,7 @@
     var zlib = require('zlib');
     var results;
 
-    zlib.gzip(event.data, (err, buffer) => {
+    zlib.gzip(dataevent, (err, buffer) => {
 
         if (!err) {
 
@@ -33,7 +33,7 @@
 
     console.log("Data Compressed...");
 
-    //logger.info(JSON.stringify(results));
+    logger.info(JSON.stringify(results));
 
 
     return results;

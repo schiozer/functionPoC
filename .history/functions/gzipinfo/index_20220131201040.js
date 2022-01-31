@@ -33,7 +33,7 @@
 
     console.log("Data Compressed...");
 
-    //logger.info(JSON.stringify(results));
+    logger.info(JSON.stringify(results));
 
 
     return results;
