@@ -9,10 +9,10 @@ public with sharing class FunctionApex {
         o.accountId = '1232345435';
         o.accountName = 'Teste do Mar';
 
-        String sending = JSON.serialize(o);
+        String sending = JSON.serialize(o;)
         
         functions.Function myFunction = functions.Function.get('functionPoC.gzipinfo');
-        functions.FunctionInvocation invocation = myFunction.invoke(sending);
+        functions.FunctionInvocation invocation = myFunction.invoke(data);
 
         String jsonResponse = invocation.getResponse();
 
