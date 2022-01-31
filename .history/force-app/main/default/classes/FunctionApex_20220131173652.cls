@@ -1,0 +1,14 @@
+public with sharing class FunctionApex {
+
+    public static void gzipInfo() {
+
+        System.debug('Invoking myfunction');
+
+        functions.Function myFunction = functions.Function.get('MyFunctionProject.myfunction');
+        functions.FunctionInvocation invocation = myFunction.invoke('{"name":"MyAccount"}');
+        
+        String jsonResponse = invocation.getResponse();
+
+        System.debug('Response from myfunction ' + jsonResponse);
+    }
+}
