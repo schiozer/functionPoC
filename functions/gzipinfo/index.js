@@ -16,25 +16,28 @@
     let dataevent = JSON.stringify(event.data);
     logger.info(`Invoking Gzipinfo with payload ${dataevent}`);
 
-    var zlib = require('zlib');
-    var results;
+    const zlib = require('zlib');
+    let results = {};
 
     zlib.gzip(dataevent, (err, buffer) => {
 
         if (!err) {
 
-          console.log(buffer.toString('base64'));
-          results = buffer;
+          results = {
+              data: buffer.toString('base64')
+          };
+
+          console.log("results: " + JSON.stringify(results));
+
+          return " Data to return: " + JSON.stringify(results);
         }
         else {
           console.log(err);
         }
       });
 
-    console.log("Data Compressed...");
+    //logger.info(results);
 
-    logger.info(JSON.stringify(results));
-
-
-    return results;
+      return results;
+    
 }
