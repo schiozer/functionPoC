@@ -9,12 +9,16 @@
         <lightning-button variant="brand" label="Comprimir"  title="Comprimir" onclick={handleClick} class="slds-var-m-left_x-small"></lightning-button>
 
         <div class="slds-var-m-top_medium slds-var-m-bottom_x-large">
+            <h2 class="slds-text-heading_medium slds-var-m-bottom_medium">
+                A text input field that is disabled.
+            </h2>
     
+            <!-- Default/basic -->
             <div class="slds-var-p-around_medium lgc-bg">
                 <lightning-input type="text" label="Texto Comprimido" value={result} disabled></lightning-input>
             </div>
         </div>
-
+        <p>{result}</p>
 
     </lightning-card>
 

@@ -16,7 +16,7 @@ export default class TestarFunction extends LightningElement {
         const dataToSend = JSON.stringify(this.textToCompress);
         console.log('O que comprimir: ' + dataToSend);
 
-        gzipInfo( { data: dataToSend } )
+        gzipInfo(dataToSend)
         .then((data) => {
 
             this.result = data;

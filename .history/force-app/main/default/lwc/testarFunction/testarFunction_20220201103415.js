@@ -1,4 +1,4 @@
-import { LightningElement } from 'lwc';
+import { LightningElement, api } from 'lwc';
 import gzipInfo from '@salesforce/apex/FunctionApex.gzipInfo';
 
 export default class TestarFunction extends LightningElement {
@@ -13,10 +13,10 @@ export default class TestarFunction extends LightningElement {
 
     handleClick(event) {
 
+        
         const dataToSend = JSON.stringify(this.textToCompress);
         console.log('O que comprimir: ' + dataToSend);
-
-        gzipInfo( { data: dataToSend } )
+        gzipInfo(dataToSend)
         .then((data) => {
 
             this.result = data;
