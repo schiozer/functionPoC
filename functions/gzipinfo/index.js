@@ -10,9 +10,9 @@
  * @param logger: logging handler used to capture application logs and trace specifically
  *                 to a given execution of a function.
  */
- 
- module.exports = async function (event, context, logger) {
-    
+
+ export default async function (event, context, logger) {
+
     let dataevent = JSON.stringify(event.data);
     logger.info(`Invoking Gzipinfo with payload ${dataevent}`);
 
@@ -31,5 +31,5 @@
           throw new Error(err);
         }
       });
-    
+
 }
