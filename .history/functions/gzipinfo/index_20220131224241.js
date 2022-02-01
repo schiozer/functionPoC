@@ -1,3 +1,5 @@
+
+//const zlib = require('zlib');
 import zlib from  'zlib';
 
 /**
@@ -19,8 +21,8 @@ import zlib from  'zlib';
     logger.info(`Invoking Gzipinfo with payload ${dataevent}`);
 
     try {
-      const result = zlib.gzipSync(dataevent).toString('base64');
-      console.log("results: " + result);
+      const result = zlib.gzipSync(dataevent);
+      console.log("results: " + result.toString('base64'));
       return result;
 
     } catch (err) {

@@ -1,5 +1,3 @@
-import zlib from  'zlib';
-
 /**
  * Describe Gzipinfo here.
  *
@@ -15,19 +13,23 @@ import zlib from  'zlib';
 
  export default async function (event, context, logger) {
 
-    const dataevent = JSON.stringify(event.data);
+    let dataevent = JSON.stringify(event.data);
     logger.info(`Invoking Gzipinfo with payload ${dataevent}`);
 
-    try {
-      const result = zlib.gzipSync(dataevent).toString('base64');
-      console.log("results: " + result);
-      return result;
+    const zlib = require('zlib');
 
-    } catch (err) {
+    zlib.gzip(dataevent, (err, buffer) => {
 
-      console.log(err);
-      throw new Error(err);
+        if (!err) {
 
-    }
+          console.log("results: " + buffer.toString('base64'));
+          return " Data to return: " + buffer.toString('base64');
+        }
+        else {
+
+          console.log(err);
+          throw new Error(err);
+        }
+      });
 
 }

@@ -4,7 +4,6 @@
   "author": "TODO",
   "description": "TODO",
   "license": "UNLICENSED",
-  "type": "module",
   "main": "index.js",
   "repository": {
     "type": "git"
