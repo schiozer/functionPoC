@@ -17,27 +17,19 @@
     logger.info(`Invoking Gzipinfo with payload ${dataevent}`);
 
     const zlib = require('zlib');
-    let results = {};
 
     zlib.gzip(dataevent, (err, buffer) => {
 
         if (!err) {
 
-          results = {
-              data: buffer.toString('base64')
-          };
-
-          console.log("results: " + JSON.stringify(results));
-
-          return " Data to return: " + JSON.stringify(results);
+          console.log("results: " + buffer.toString('base64'));
+          return " Data to return: " + buffer.toString('base64');
         }
         else {
+
           console.log(err);
+          throw new Error(err);
         }
       });
-
-    //logger.info(results);
-
-      return results;
     
 }
