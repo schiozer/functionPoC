@@ -1,0 +1,21 @@
+<template>
+
+    <lightning-card  variant="Narrow"  title="Teste de Function GZIP" icon-name="standard:case">
+
+        <div class="slds-var-p-around_medium lgc-bg">
+            <lightning-textarea name="inputData" label="Digite o conteúdo a comprimir:" value={textToCompress} onchange={changeInputHandler} placeholder="Digite o conteúdo a comprimir..."></lightning-textarea>
+        </div>
+
+        <lightning-button variant="brand" label="Comprimir"  title="Comprimir" onclick={handleClick} class="slds-var-m-left_x-small"></lightning-button>
+
+        <div class="slds-var-m-top_medium slds-var-m-bottom_x-large">
+    
+            <div class="slds-var-p-around_medium lgc-bg">
+                <lightning-input type="text" label="Texto Comprimido" value={result} disabled></lightning-input>
+            </div>
+        </div>
+
+
+    </lightning-card>
+
+</template>
