@@ -15,8 +15,4 @@ public with sharing class FunctionApex {
         return jsonResponse;
     }
 
-    public class MyJSONObj{
-        String AccountName;
-        String AccountId;
-    }
 }
